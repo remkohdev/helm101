@@ -46,8 +46,8 @@ In this part of the lab, we show you how to install the `guestbook` chart from t
 
    ```console
    $ helm search repo helm101
-   NAME              CHART VERSION  APP VERSION DESCRIPTION
-   helm101/guestbook 0.2.1                      A Helm chart to deploy Guestbook three tier web...
+   NAME    CHART VERSION  APP VERSION DESCRIPTION
+   helm101/guestbook 0.2.1    A Helm chart to deploy Guestbook three tier web...
    ```
 
 1. Install the chart
@@ -57,7 +57,7 @@ In this part of the lab, we show you how to install the `guestbook` chart from t
    If the `repo-demo` namespace does not exist, create it using:
 
    ```console
-   kubectl create namespace repo-demo
+   oc new-project repo-demo
    ```
 
    Now install the chart using this command:
@@ -79,8 +79,8 @@ In this part of the lab, we show you how to install the `guestbook` chart from t
    NOTES:
    1. Get the application URL by running these commands:
      NOTE: It may take a few minutes for the LoadBalancer IP to be available.
-           You can watch the status of by running 'kubectl get svc -w guestbook-demo --namespace repo-demo'
-     export SERVICE_IP=$(kubectl get svc --namespace repo-demo guestbook-demo -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+           You can watch the status of by running 'oc get svc -w guestbook-demo --namespace repo-demo'
+     export SERVICE_IP=$(oc get svc --namespace repo-demo guestbook-demo -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
      echo http://$SERVICE_IP:3000
    ```
 

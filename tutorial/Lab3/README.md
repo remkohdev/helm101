@@ -63,29 +63,29 @@ Let's see how this works in practice.
     Check the rollback, using:
 
     ```console
-    kubectl get all --namespace helm-demo
+    oc get all --namespace helm-demo
     ```
 
     ```console
-    $ kubectl get all --namespace helm-demo
-    NAME                                  READY   STATUS    RESTARTS   AGE
+    $ oc get all --namespace helm-demo
+    NAME    READY   STATUS    RESTARTS   AGE
     pod/guestbook-demo-6c9cf8b9-dhqk9     1/1     Running   0          20h
     pod/guestbook-demo-6c9cf8b9-zddn      1/1     Running   0          20h
     pod/redis-master-5d8b66464f-g7sh6     1/1     Running   0          20h
     pod/redis-slave-586b4c847c-tkfj5      1/1     Running   0          5m15s
     pod/redis-slave-586b4c847c-xxrdn      1/1     Running   0          5m15s
 
-    NAME                     TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+    NAME    TYPE    CLUSTER-IP    EXTERNAL-IP   PORT(S)    AGE
     service/guestbook-demo   LoadBalancer   172.21.43.244    <pending>     3000:31202/TCP   20h
     service/redis-master     ClusterIP      172.21.12.43     <none>        6379/TCP         20h
     service/redis-slave      ClusterIP      172.21.232.16    <none>        6379/TCP         5m15s
 
-    NAME                             READY   UP-TO-DATE   AVAILABLE   AGE
+    NAME    READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/guestbook-demo   2/2     2            2           20h
     deployment.apps/redis-master     1/1     1            1           20h
     deployment.apps/redis-slave      2/2     2            2           5m15s
 
-    NAME                                        DESIRED   CURRENT   READY   AGE
+    NAME    DESIRED   CURRENT   READY   AGE
     replicaset.apps/guestbook-demo-26c9cf8b9    2         2         2       20h
     replicaset.apps/redis-master-5d8b66464f     1         1         1       20h
     replicaset.apps/redis-slave-586b4c847c      2         2         2       5m15s
